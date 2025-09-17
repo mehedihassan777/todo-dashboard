@@ -1,0 +1,28 @@
+/* Define font-face for Sofia Pro with various weights */
+@mixin font-face($family, $weight, $style: normal) {
+	@font-face {
+		font-family: $family;
+		src: url("../fonts/SofiaPro-#{$weight}.woff") format("woff"),
+			url("../fonts/SofiaPro-#{$weight}.woff2") format("woff2");
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+/* Regular weight (300) */
+@include font-face("Sofia Pro", 300);
+
+/* Regular weight (400) */
+@include font-face("Sofia Pro", 400);
+
+/* Medium weight (500) */
+@include font-face("Sofia Pro", 500);
+
+/* Medium weight (600) */
+@include font-face("Sofia Pro", 600);
+
+/* Bold weight (700) */
+@include font-face("Sofia Pro", 700);
+
+/* Bold weight (900) */
+@include font-face("Sofia Pro", 900);

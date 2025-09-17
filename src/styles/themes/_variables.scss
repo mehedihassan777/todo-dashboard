@@ -1,0 +1,51 @@
+/*Color Variables*/
+$primary-color: #10357f;
+$secondary-color: #08a8ff;
+$success: #08a742;
+$success-light: #adc936;
+$danger: #ff3f41;
+$warning: #ffb92d;
+$dark: #2d3d4d;
+
+// Mixins
+@mixin transition(
+	$property: all,
+	$duration: 300ms,
+	$animate: linear,
+	$delay: 0s
+) {
+	transition: $property $duration $animate $delay;
+}
+// Hide scrollbar
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.hide-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+// Placeholder Mixins
+@mixin placeholder {
+	&.placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+// Zoom animation
+@keyframes smooth-zoom {
+	0% {
+		transform: scale(1); /* Starting point (no zoom) */
+	}
+	100% {
+		transform: scale(1.15); /* End point (zoom to 1.15) */
+	}
+}

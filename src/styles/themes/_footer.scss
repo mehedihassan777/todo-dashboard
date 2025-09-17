@@ -1,0 +1,102 @@
+@use "./variables" as *;
+@layer components {
+	.app-footer {
+		&-widgets {
+			background: #e8e8e8;
+			.f-widgets-title {
+				font-size: 16px;
+				color: $primary-color;
+			}
+		}
+		&-copyright {
+			background: #c7c7c7;
+		}
+	}
+	.link-list {
+		.navbar-nav {
+			li {
+				margin-bottom: 7px;
+				&:last-child {
+					margin-bottom: 0px;
+				}
+				a {
+					color: rgba($dark, 0.6);
+					font-size: 14px;
+					display: block;
+					&:hover {
+						color: $secondary-color;
+					}
+				}
+			}
+		}
+	}
+
+	.link-image {
+		.navbar-nav {
+			li {
+				margin-right: 10px;
+				&:last-child {
+					margin-right: 0px;
+				}
+			}
+		}
+	}
+
+	// scroll-to-top
+	.scroll-to-top {
+		background: linear-gradient(
+			127deg,
+			rgba(0, 37, 102, 0.95) 0%,
+			rgba(2, 89, 176, 0.95) 98.71%
+		);
+		z-index: 9999;
+		transition: transform 300ms ease-in-out 0s, box-shadow 300ms ease-in-out 0s;
+		&:hover {
+			transform: translateY(-3px);
+			box-shadow: rgba(0, 0, 0, 0.08) 0px 11px 13px -2px;
+		}
+		@media (max-width: 575px) {
+			right: 10px;
+			bottom: 60px;
+		}
+	}
+	.footer-social {
+		a {
+			display: inline-block;
+			height: 40px;
+			width: 40px;
+			min-width: 40px;
+			border-radius: 50%;
+			background: #10357e;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: 0.3s;
+			@media (max-width: 1025px) {
+				height: 27px;
+				width: 27px;
+				min-width: 27px;
+				svg {
+					height: 12px;
+				}
+			}
+			&:is(:hover, :focus) {
+				background: #fff;
+				color: #10357e;
+			}
+			&.sm-social-item {
+				height: 24px !important;
+				width: 24px !important;
+				min-width: 24px !important;
+				background: #fff !important;
+				color: #10357e !important;
+				margin-bottom: 8px;
+				&:is(:hover, :focus) {
+					background: #10357e !important;
+					color: #fff !important;
+				}
+			}
+		}
+	}
+}

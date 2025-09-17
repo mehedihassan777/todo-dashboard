@@ -1,0 +1,135 @@
+@layer components {
+	.modal-overlay {
+		background: rgba(32, 73, 113, 0.7);
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		position: fixed;
+		backdrop-filter: blur(3px);
+		inset: 0;
+		width: 100%;
+		overflow: hidden;
+		opacity: 0;
+		visibility: visible;
+		transition: all 0.4s linear;
+		position: fixed;
+		top: 0;
+		left: 0;
+		scroll-behavior: none;
+		pointer-events: none;
+		z-index: 999;
+	}
+	.overlay-active {
+		&.modal-overlay {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	.app-modal {
+		// background: rgba(32, 73, 113, 0.7);
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		position: fixed;
+		// backdrop-filter: blur(3px);
+		inset: 0;
+		width: 100%;
+		overflow: hidden;
+		z-index: 9999;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transform: translateY(100%);
+		transition: all 0.3s linear;
+
+		&-body {
+			position: relative;
+			padding: 40px 0;
+			width: 100%;
+			margin-top: 100px;
+			height: auto;
+			min-height: 60vh;
+			overflow: hidden;
+			background: #fff;
+			border-radius: 35px 35px 0 0;
+			.form-box .form-group textarea {
+				height: 60px !important;
+			}
+			@media (max-width: 991px) {
+				padding-top: 60px;
+				padding-bottom: 16px;
+			}
+		}
+		&-close {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			color: #fff;
+			background: #002566;
+			height: 40px;
+			width: 40px;
+			border-radius: 50%;
+			display: grid;
+			place-content: center;
+		}
+		&.open {
+			transform: translateY(0);
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+		.modal-auto {
+			max-height: 75vh;
+			overflow-y: auto;
+			-ms-overflow-style: none; /* IE and Edge */
+			scrollbar-width: none;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			@media (min-width: 768px) {
+				max-height: 85vh;
+			}
+		}
+	}
+	.call-back-modal {
+		position: relative;
+		z-index: 2;
+		&::after {
+			position: absolute;
+			inset: 0;
+			content: "";
+			background: linear-gradient(
+				253deg,
+				rgba(255, 255, 255, 0) 0%,
+				rgba(255, 255, 255, 0.87) 79.18%
+			);
+			mix-blend-mode: hard-light;
+		}
+	}
+
+	.how-it-work-modal {
+		h4 {
+			color: #2d3d4d !important;
+			font-weight: 600 !important;
+		}
+		p {
+			color: #2d3d4d !important;
+		}
+		.solar-pv-heading {
+			color: #2d3d4d !important;
+			font-size: 16px;
+		}
+	}
+	.right-icon-modal {
+		svg {
+			position: relative;
+			transition: all 300ms linear;
+			left: 0px;
+		}
+		&:is(:hover, :focus) {
+			svg {
+				left: 10px;
+			}
+		}
+	}
+}

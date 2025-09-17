@@ -1,0 +1,321 @@
+@use "./variables" as *;
+@layer components {
+	.app-header {
+		top: 0;
+		position: sticky;
+		z-index: 999;
+		box-shadow: 0 1px 10px rgba(13, 13, 13, 0.1);
+		&-top {
+			background: #0f2f54;
+			color: #fff;
+			font-size: 11px;
+			@media (min-width: 400px) {
+				font-size: 14px;
+			}
+			.icon {
+				color: $success-light;
+			}
+		}
+		&-menu {
+			.logo {
+				@media (max-width: 389px) {
+					width: 110px !important;
+					margin-right: 65px !important;
+				}
+			}
+			.seai-grants-logo {
+				position: fixed;
+				margin-left: 265px;
+				top: -1px;
+				img {
+					filter: drop-shadow(5.3px 3.9px 6.6px rgba(32, 73, 113, 0.1));
+				}
+				@media (max-width: 1279px) {
+					margin-left: 195px !important;
+				}
+				@media (max-width: 1025px) {
+					position: absolute;
+					margin-left: 150px !important;
+					top: 0;
+					img {
+						width: 47px !important;
+					}
+				}
+
+				@media (max-width: 389px) {
+					margin-left: 120px !important;
+					img {
+						width: 43px !important;
+					}
+				}
+			}
+			.customer {
+				small {
+					max-width: 117px;
+					line-height: 17px;
+					color: $primary-color;
+					position: relative;
+					display: inline-block;
+					&::before {
+						content: "";
+						position: absolute;
+						left: 0;
+						bottom: -4px;
+						background: $success-light;
+						width: 40px;
+						height: 2px;
+					}
+				}
+				.icon {
+					height: 16px;
+					width: 16px;
+					border-radius: 50%;
+					text-align: center;
+					line-height: 14px;
+					color: #fff;
+					background: $success-light;
+					place-content: center;
+				}
+				@media (max-width: 1025px) {
+					p small {
+						font-size: 10px;
+						line-height: 12px;
+						&::before {
+							width: 28px;
+						}
+					}
+				}
+				@media (max-width: 389px) {
+					p small {
+						font-size: 8px;
+						line-height: 10px;
+						&::before {
+							width: 25px;
+						}
+					}
+				}
+			}
+			@media (max-width: 1024px) {
+				.nabbar-brand {
+					width: 100%;
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+			@media (min-width: 1025px) {
+				.toggle-button {
+					display: none;
+				}
+				.tablet-button {
+					display: none !important;
+				}
+			}
+			@media (max-width: 349px) {
+				.toggle-button svg {
+					width: 20px;
+				}
+			}
+			.navbar-collapse {
+				display: none;
+				@media (min-width: 1025px) {
+					display: block;
+				}
+			}
+			.navbar-nav {
+				li {
+					margin-left: 10px;
+					color: #2d3d4d;
+					font-size: 14px;
+					@media (min-width: 1199px) {
+						margin-left: 25px;
+						font-weight: 500;
+					}
+					&:first-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// Menu Css
+	.app-header-menu {
+		position: relative;
+	}
+	.main-menu {
+		.dropdown {
+			border-bottom: 2px solid transparent;
+			svg {
+				transition: all 0.4s;
+			}
+			.sub-menu {
+				position: absolute;
+				width: 100%;
+				background: rgba(#f3f3f3, 0.9);
+				left: 0px;
+				z-index: 5;
+				top: 100%;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 300ms linear;
+				pointer-events: none;
+				&-list {
+					min-height: 320px;
+					li {
+						color: rgba(#fff, 0.5);
+						margin-bottom: 15px;
+						transition: all 300ms linear;
+						&:hover,
+						&.active {
+							color: #fff;
+							font-weight: 600;
+						}
+					}
+				}
+				&-list,
+				&-second,
+				&-third,
+				&-four {
+					padding: 50px;
+					li {
+						margin-left: 0px;
+						margin-bottom: 15px;
+						&:last-child {
+							margin-bottom: 0px;
+						}
+					}
+				}
+				&-second,
+				&-third,
+				&-four {
+					border-right: 1px solid rgba($dark, 0.15);
+					li {
+						a {
+							color: rgba($primary-color, 0.7);
+							transition: all 300ms linear;
+						}
+						&:hover,
+						&.active {
+							a {
+								color: $primary-color;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+				&-four {
+					border-right: 0px;
+				}
+			}
+			// &:hover {
+			// 	border-color: #0f2f54;
+			// 	.sub-menu {
+			// 		opacity: 1;
+			// 		visibility: visible;
+			// 		pointer-events: all;
+			// 	}
+			// }
+			&.active {
+				border-color: #0f2f54;
+				// .first-arrow svg {
+				// 	transform: rotate(180deg);
+				// }
+			}
+			.show-menu-dropdown {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: all;
+			}
+		}
+		&-v2 {
+			.dropdown {
+				position: relative;
+				transition: all 0.03s ease-in;
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: -2px;
+					left: -30px;
+					right: 0;
+					width: 0;
+					background: #0f2f54;
+					height: 2px;
+					transition: 300ms all;
+				}
+				a {
+					color: #2d3d4d;
+					transition: all 0.03s;
+				}
+				&:hover {
+					// a {
+					// 	font-weight: 600;
+					// }
+					&::after {
+						left: 0;
+						width: 100%;
+					}
+				}
+				.dropdown-menu {
+					position: absolute;
+					background: #fff;
+					min-width: 200px;
+					top: 100%;
+					right: 0;
+					transform: translateX(-30px);
+					opacity: 0;
+					visibility: hidden;
+					transition: 300ms all;
+					pointer-events: none;
+
+					box-shadow: 0 3px 18px rgba(0, 0, 0, 0.2);
+					li {
+						margin: 0;
+						a {
+							font-size: 16px;
+							font-weight: 400;
+							display: block;
+							color: #2d3d4d;
+							padding: 16px 20px;
+							border-bottom: 1px solid rgba(13, 13, 13, 0.4);
+							@include transition;
+							&:hover {
+								background: #e8e8e8;
+								padding-left: 25px;
+							}
+						}
+					}
+				}
+				&.active,
+				&:hover {
+					.dropdown-menu {
+						opacity: 1;
+						visibility: visible;
+						transform: translateX(0);
+						pointer-events: all;
+					}
+					&::after {
+						left: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	@media (min-width: 1024px) and (max-width: 1100px) {
+		.app-header {
+			.container {
+				max-width: 950px !important;
+			}
+		}
+		.fixed-services {
+			display: none !important;
+		}
+		.app-header-menu {
+			padding: 6px 16px !important;
+		}
+		.app-header-menu .seai-grants-logo {
+			margin-left: 220px;
+		}
+	}
+}

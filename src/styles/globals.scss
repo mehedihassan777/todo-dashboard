@@ -1,0 +1,13 @@
+// Main SCSS entry point for global styles
+
+@use "tailwindcss";
+
+@use "themes/variables";
+@use "themes/fonts";
+@use "themes/button";
+@use "themes/footer";
+@use "themes/predefined";
+@use "themes/header";
+@use "themes/header-sm";
+@use "themes/tables";
+@use "themes/modal";

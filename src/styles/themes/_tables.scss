@@ -1,0 +1,20 @@
+@layer components {
+	.app-table {
+		@apply text-left border border-[#D2D1D4] rounded-2xl table-auto border-separate border-spacing-0 overflow-hidden;
+		thead {
+			@apply bg-[#0D0D0D]/5;
+			tr {
+				th {
+					@apply text-[#0D0D0D] font-semibold text-base p-4 leading-[17px];
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					@apply text-[#0D0D0D] text-sm py-3 p-4 border-b border-[#0D0D0D]/5;
+				}
+			}
+		}
+	}
+}

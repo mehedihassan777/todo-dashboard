@@ -1,0 +1,28 @@
+x-bake:
+  variables:
+    DOCKER_BUILDKIT: 1
+    COMPOSE_DOCKER_CLI_BUILD: 1
+services:
+  test-customer-portal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ENV_FILE: .env.test    # ensures test vars are used at build time
+    env_file:
+      - .env.test              # server-side runtime env vars (not exposed to client)
+    ports:
+      - "3006:3000"
+    restart: unless-stopped
+
+  prod-customer-portal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ENV_FILE: .env.production    # ensures production vars are used at build time
+    env_file:
+      - .env.production          # server-side runtime env vars (not exposed to client)
+    ports:
+      - "3007:3000"
+    restart: unless-stopped
