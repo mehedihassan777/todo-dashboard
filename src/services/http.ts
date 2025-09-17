@@ -4,7 +4,7 @@ import AppConst from "@/config/app.const";
 import { getCookie } from "@/utils/cookie";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
-const BASE_URL = AppConst.webApiBaseUrl || "https://todo-dashboard-k7xomdpfo-mehedi-hassans-projects-9e85e73e.vercel.app/api";
+const BASE_URL = AppConst.webApiBaseUrl || "https://todo-dashboard-psi.vercel.app/api";
 
 const http = axios.create({
   baseURL: BASE_URL,

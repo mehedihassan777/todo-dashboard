@@ -60,7 +60,7 @@ describe("Login component", () => {
   it("shows error for wrong credentials (integration)", async () => {
     // Override the login handler for this test to return a 401 error
     server.use(
-      http.post("https://todo-dashboard-k7xomdpfo-mehedi-hassans-projects-9e85e73e.vercel.app//api/auth/login", () => {
+      http.post("https://todo-dashboard-psi.vercel.app/api/auth/login", () => {
         return HttpResponse.json(
           { message: "Invalid email or password." },
           { status: 401 }

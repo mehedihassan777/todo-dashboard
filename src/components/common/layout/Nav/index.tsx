@@ -88,7 +88,7 @@ const Nav: React.FC = () => {
 								<div className="flex items-center">
 									<Link
 										className="lg:w-[182px] w-[135px] lg:mr-[130px] xl:mr-[200px] mr-[75px] logo"
-										href="https://todo-dashboard-k7xomdpfo-mehedi-hassans-projects-9e85e73e.vercel.app/"
+										href="#"
 										onClick={() => setIsDropdownOpen(false)}
 									>
 										<Image
